@@ -1,0 +1,24 @@
+{
+  "name": "projeto_guiapress",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/BruLekichLouro/Guiapress.git"
+  },
+  "keywords": [
+    "node",
+    "javaScript",
+    "express"
+  ],
+  "author": "Bruna Lekich Louro",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BruLekichLouro/Guiapress/issues"
+  },
+  "homepage": "https://github.com/BruLekichLouro/Guiapress#readme"
+}
