@@ -2,6 +2,8 @@ const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
 const connection = require("./database/database");
+const categoriesController = require("./categories/CategoriesController.js");
+const articlesController = require("./articles/ArticlesController.js");
 
 //View engine:
 app.set('view engine','ejs');
@@ -21,6 +23,10 @@ connection
     }).catch((error)=>{
         console.log(error);
     });
+
+//Utilizando rotas de outro arquivo:
+app.use("/", categoriesController);
+app.use("/", articlesController);
 
 //Rota:
 app.get("/", (req, res) => {
