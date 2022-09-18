@@ -1,5 +1,5 @@
 const Sequelize = require("sequelize");
-const connection = require("../database");
+const connection = require("../database/database");
 
 //Definindo o model:
 const Category = connection.define('categories', {
@@ -11,5 +11,7 @@ const Category = connection.define('categories', {
         allowNull:false
     } 
 })
+
+Category.sync({force:true});
 
 module.exports= Category;
