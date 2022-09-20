@@ -3,8 +3,8 @@ const app = express();
 const bodyParser = require("body-parser");
 const connection = require("./database/database");
 
-const categoriesController = require("./categories/CategoriesController.js");
-const articlesController = require("./articles/ArticlesController.js");
+const categoriesController = require("./categories/CategoriesController");
+const articlesController = require("./articles/ArticlesController");
 
 const Article = require("./articles/Article");
 const Category = require("./categories/Category");
@@ -19,11 +19,11 @@ app.use(bodyParser.urlencoded({extend:false}));
 //aceitar também dados formato json:
 app.use(bodyParser.json());
 
-//Database:
+//Conectando-se ao BD:
 connection
     .authenticate()
     .then(()=>{
-        console.log("Conexão feita com sucesso")
+        console.log("Conexão feita com sucesso");
     }).catch((error)=>{
         console.log(error);
     });
@@ -40,4 +40,4 @@ app.get("/", (req, res) => {
 //Servidor:
 app.listen(8080, ()=>{
     console.log("Servidor está rodando!");
-})
+});

@@ -4,7 +4,7 @@ const Category = require("../categories/Category");
 
 //Definindo o model:
 const Article = connection.define('articles', {
-    tittle:{
+    title:{
         type: Sequelize.STRING,
         allowNull: false
     }, slug:{//endereço da categoria
@@ -14,7 +14,7 @@ const Article = connection.define('articles', {
         type: Sequelize.TEXT,
         allowNull: false
     }
-})
+});
 
 Category.hasMany(Article);// 1 : N
 Article.belongsTo(Category); // 1 : 1

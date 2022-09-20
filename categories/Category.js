@@ -3,14 +3,14 @@ const connection = require("../database/database");
 
 //Definindo o model:
 const Category = connection.define('categories', {
-    tittle:{
+    title:{
         type: Sequelize.STRING,
         allowNull: false
-    }, slug:{//endereço da categoria
+    }, slug:{//endereço ou título da categoria
         type: Sequelize.STRING,
         allowNull:false
     } 
-})
+});
 
 Category.sync({force:true});
 
