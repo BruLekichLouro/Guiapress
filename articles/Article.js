@@ -1,3 +1,5 @@
+//Model de artigo:
+
 const Sequelize = require("sequelize");
 const connection = require("../database/database");
 const Category = require("../categories/Category");

@@ -1,3 +1,4 @@
+//Model de Categoria:
 const Sequelize = require("sequelize");
 const connection = require("../database/database");
 
@@ -6,7 +7,7 @@ const Category = connection.define('categories', {
     title:{
         type: Sequelize.STRING,
         allowNull: false
-    }, slug:{//endereço ou título da categoria
+    }, slug:{//Versão do titulo otimizada para url
         type: Sequelize.STRING,
         allowNull:false
     } 
