@@ -8,7 +8,7 @@ router.get("/admin/categories/new", (req, res)=>{
     res.render("admin/categories/new")
 });
 
-//Rota para pegar dados do formulário:
+//Rota para pegar dados do formulário e criar nova categoria:
 router.post("/categories/save", (req, res)=>{
     var title = req.body.title;
     if(title != undefined){//usuário não poderá cadastrar valor nulo
