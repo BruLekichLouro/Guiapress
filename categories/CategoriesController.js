@@ -26,7 +26,11 @@ router.post("/categories/save", (req, res)=>{
 
 //Rota para tela onde serão listadas as categorias:
 router.get("/admin/categories", (req, res)=>{
-    res.render("admin/categories/index")
-})
+
+    //chamar model:
+    Category.findAll().then(categories =>{
+        res.render("admin/categories/index", {categories:categories})
+    }); 
+});
 
 module.exports = router;
