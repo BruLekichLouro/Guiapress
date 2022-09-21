@@ -33,4 +33,25 @@ router.get("/admin/categories", (req, res)=>{
     }); 
 });
 
+//Rota para deletar categoria:
+router.post("/categories/delete", (req, res)=>{
+    //vou receber o id da categoria que queremos deletar:
+    var id = req.body.id;
+    if(id != undefined){
+        if(!isNaN(id)){ //se for um número
+            Category.destroy({
+                where:{
+                    id :id
+                }
+            }).then(()=>{
+                res.redirect("/admin/categories")
+            })
+        } else {//se não for número
+            res.redirect("/admin/categories")
+        }
+    }else{ //se for null
+        res.redirect("/admin/categories")
+    }
+});
+
 module.exports = router;
