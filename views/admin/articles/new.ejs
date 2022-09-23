@@ -11,12 +11,37 @@
                 <form method="POST" action="/categories/save">
                     <input class="form-control" type="text" name="title" placeholder="Defina o título do artigo">
                     <br> 
-                    <textarea class="form-control" placeholder="Escreva seu artigo aqui" cols="30" rows="10" name="body"></textarea>
+                    <textarea class="form-control" placeholder="Escreva seu artigo aqui" cols="30" rows="10" name="body" id="article"></textarea>
                     <br> <br>
-                    <button class="btn btn-dark" >Cadastrar</button>
+                    <button class="btn btn-dark"> Cadastrar </button>
                 </form>
             </div>
         </div>
     </div>
 </body>
 <%- include('../../partials/footer.ejs') %>
+
+<!--Importando tinyMCE: -->
+<script src="/tinymce/tinymce.min.js"></script>
+<!--Configurando tinyMCE: -->
+<script>
+    tinymce.init({
+                selector: "#article",
+                plugins: [
+                    'advlist',
+                    'autolink',
+                    'link',
+                    'image',
+                    'lists',
+                    'preview',
+                    'searchreplace',
+                    'wordcount',
+                    'fullscreen',
+                    'insertdatetime',
+                    'media',
+                    'save',
+                    'table',
+                    'emoticons',
+                ]
+            })
+</script>
