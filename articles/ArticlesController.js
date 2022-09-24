@@ -5,8 +5,8 @@ const Article = require("./Article");
 const slugify = require("slugify");
 
 
-router.get("/articles", (req, res)=>{
-    res.send("Rotas de artigos");
+router.get("/admin/articles", (req, res)=>{
+    res.send("Artigo salvo com sucesso");
 });
 
 //Rota para criar novo artigo
@@ -26,7 +26,9 @@ router.post("/articles/save", (req, res)=> {
         slug: slugify(title),
         body: body,
         categoryId: category //foreign key criado pelo relacionamento belongsTo
-    })
-})
+    }).then(()=>{
+        res.redirect("/admin/articles");
+    });
+});
 
 module.exports = router;
