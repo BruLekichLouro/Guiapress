@@ -5,10 +5,12 @@ const slugify = require("slugify");
 
 //Rota:
 router.get("/admin/categories/new", (req, res)=>{
-    res.render("admin/categories/new")
+    res.render("admin/categories/new");
 });
 
-//Rota para pegar dados do formulário e criar nova categoria:
+
+
+//Rota para pegar dados do formulário e criar/salvar nova categoria:
 router.post("/categories/save", (req, res)=>{
     var title = req.body.title;
     if(title != undefined){//usuário não poderá cadastrar valor nulo
@@ -63,7 +65,7 @@ router.get("/admin/categories/edit/:id", (req, res) =>{
     };
     Category.findByPk(id).then(category =>{
         if(category != undefined){
-            res.render("/admin/categories/edit",{category: category})
+            res.render("admin/categories/edit",{category: category})
 
         }else{
             res.redirect("/admin/categories");

@@ -6,7 +6,7 @@ const slugify = require("slugify");
 
 
 router.get("/admin/articles", (req, res)=>{
-    res.send("Artigo salvo com sucesso");
+    res.render("admin/articles/index")
 });
 
 //Rota para criar novo artigo
