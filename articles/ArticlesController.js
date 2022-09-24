@@ -4,7 +4,7 @@ const Category = require("../categories/Category");
 const Article = require("./Article");
 const slugify = require("slugify");
 
-
+//Rota de artigos:
 router.get("/admin/articles", (req, res)=>{
     res.render("admin/articles/index")
 });
