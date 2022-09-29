@@ -36,4 +36,26 @@ router.post("/articles/save", (req, res)=> {
     });
 });
 
+//Rota para deletar artigo:
+router.post("/articles/delete", (req, res)=>{
+    //vou receber o id da categoria que queremos deletar:
+    var id = req.body.id;
+    if(id != undefined){
+        if(!isNaN(id)){ //se for um número
+            Article.destroy({
+                where:{
+                    id :id
+                }
+            }).then(()=>{
+                res.redirect("/admin/articles")
+            })
+        } else {//se não for número
+            res.redirect("/admin/articles")
+        }
+    }else{ //se for null
+        res.redirect("/admin/articles")
+    }
+});
+
+
 module.exports = router;

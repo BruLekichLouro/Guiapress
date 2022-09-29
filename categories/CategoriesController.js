@@ -6,7 +6,7 @@ const slugify = require("slugify");
 //Rota:
 router.get("/admin/categories/new", (req, res)=>{
     res.render("admin/categories/new");
-});
+    });
 
 //Rota para pegar dados do formulário e criar/salvar nova categoria:
 router.post("/categories/save", (req, res)=>{
@@ -45,7 +45,7 @@ router.post("/categories/delete", (req, res)=>{
                 }
             }).then(()=>{
                 res.redirect("/admin/categories")
-            })
+            });
         } else {//se não for número
             res.redirect("/admin/categories")
         }
