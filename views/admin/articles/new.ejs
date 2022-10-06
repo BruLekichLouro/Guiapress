@@ -8,23 +8,21 @@
                 <h2>Novo artigo:</h2>
             </div>
             <div class="card-body">
-                <form method="POST" action="/articles/save">
+                <form method="POST" action="/categories/save">
                     <input class="form-control" type="text" name="title" placeholder="Defina o título do artigo">
                     <br> 
-                    <textarea class="form-control" placeholder="Escreva seu artigo aqui" cols="30" rows="10" name="body" id="article"></textarea>
-                    <label> Categoria</label>
-                    <select name="article" class="form-control">
-                        <% categories.forEach((category) => {  %>
-                            <option value="<%= category.id %>"> <%= article.title %> </option>
-                        <% }) %>
-                    </select>
-                    <br> <br>
-                    <button class="btn btn-dark"> Cadastrar </button>
+                    <textarea class="form-control" placeholder="Escreva o artigo aqui" name="body"></textarea>
+                    <br> 
+                    <button class="btn btn-dark" >Cadastrar</button>
                 </form>
             </div>
         </div>
     </div>
 </body>
+
+
+
+
 <%- include('../../partials/footer.ejs') %>
 
 <!--Importando tinyMCE: -->
