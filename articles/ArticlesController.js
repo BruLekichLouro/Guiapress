@@ -6,11 +6,7 @@ const slugify = require("slugify");
 
 //Rota de artigos:
 router.get("/admin/articles", (req, res)=>{
-    Article.findAll({
-        include:[{model: Category}] //join
-    }).then(articles =>{
-        res.render("admin/articles/index", {articles:articles})
-    })
+        res.send("Rotas de artigos");
 });
 
 //Rota para criar novo artigo
