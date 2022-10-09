@@ -39,6 +39,24 @@ app.get("/", (req, res) => {
     });
 });
 
+//Rota para página de artigo:
+app.get("/:slug", (req, res)=>{
+    var slug=req.params.slug;
+    Article.findOne({
+        where:{
+            slug:slug
+        }
+    }).then(article => {
+        if(article != undefined){
+            res.render("article", {article:article})
+        }else{
+            res.redirect("/");
+        }
+    }).catch(err =>{
+        res.redirect("/");
+    })
+})
+
 //Servidor:
 app.listen(8080, ()=>{
     console.log("Servidor está rodando!");
