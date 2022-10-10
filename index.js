@@ -71,7 +71,7 @@ app.get("/category/:slug",(req, res) =>{
         where:{
             slug:slug
         },
-        include:[{model:Article}]
+        include:[{model:Article}] //incluindo na busca nas categorias todos artigos que faze parte dela
     }).then(category=>{
         if(category != undefined){
             Category.findAll().then(categories=>{
