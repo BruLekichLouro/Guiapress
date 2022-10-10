@@ -60,10 +60,7 @@ router.post("/articles/delete", (req, res)=>{
 //Rota para edição da artigos:
 router.get("/admin/articles/edit/:id", (req, res) =>{
     var id = req.params.id;
-
-    if(isNaN(id)){
-        res.redirect("/admin/articles");
-    };
+    
     Article.findByPk(id).then(article =>{
         if(article != undefined){
             Category.findAll().then(categories=>{
